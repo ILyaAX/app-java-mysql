@@ -1,8 +1,8 @@
 version: '3.7'
 
 services:
-  percona:
-    image: percona:5
+  mysql:
+    image: mysql:5
     restart: always
     ports:
       - "3306:3306"
