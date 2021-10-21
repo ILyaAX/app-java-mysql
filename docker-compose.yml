@@ -25,8 +25,8 @@ services:
       context: ./
       dockerfile: Dockerfile
     volumes:
-      - type: volume
-        source: app
+      - type: bind
+        source: ./app
         target: /home/target
 
   webapp:
@@ -34,11 +34,8 @@ services:
     ports:
       - "80:8080"
     volumes:
-      - type: volume
-        source: app
+      - type: bind
+        source: ./app
         target: /usr/local/tomcat/webapps
     depends_on:
       - build_app
-
-volumes:
-  app:
